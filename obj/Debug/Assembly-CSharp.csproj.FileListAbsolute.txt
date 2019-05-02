@@ -1,0 +1,2 @@
+C:\Users\Oliver C-McC\Desktop\Game Development Projects\Fortify\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Oliver C-McC\Desktop\Game Development Projects\Fortify\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

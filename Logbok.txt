@@ -1,0 +1,81 @@
+[2018-06-21]
+Have Removed the rear point on the maps and moved the bases to the middle second nodes.
+Have also widened the map to its previoues width (11N).
+
+Have made a taller map (5N and highest).
+
+[2018-06-20]
+Have reduced the recursive retreat percentage to 60.
+Have also added an 80% max on surviving forces in the initial retreat.
+Have reduced combat losses taken during successful captures to 60%, from 100%.
+
+Have extended the gamemaster in order to create a 'hotseatmaster' in order to allow for multiple people to play on one client.
+The game is still technically client-server, but the server now changes what player number the client is during the turnOver(next turn function).
+Also found a new opening move! :)
+
+Added a contextual tooltip to the game.
+It shows the power of an attack, as well as the total strength of a node post reinforcement;
+Note: It doesn't work with the tourch screen very well.
+
+Added a dynamic node connection map drawer, to dynamically draw the connections between the nodes.
+It works REALLY well. I'm very happy with it. :)
+
+-> Matt approved of the new sound direction. Balence seems ok for now. More test cases require.
+
+Have added a new graphic for the starting nodes.
+Added a game over panel, and have set inplay into false post endgame status.
+Added a leave button to the game over screen.
+
+[2018-06-19]
+New mechanics are completely unbalenced. Need reworking again today.
+Flank is too powerful, needs a reduction in bonus. 
+Encapsulated the flank mechanic as it's own function (should have in the first place)
+Reworked Combat losses to remove rounding bug caused int casts;
+Added new flank calcualtion to the captured failure equations, as I have forgoten to do so.
+- Halfed the percentage gain on the flanking system.
+
+Reworking Reinforce system. New system has no downside. 
+Node recieces half the strength of the neighbouring nodes. 
+Flank bouns does Not Apply.
+
+Rework on retreat system again. Percentage of surviving troops now based on the attack/defence ratio.
+Each node now gets 20 percent of the survivors, meaning an encapsulation recieves all the survivors.
+
+-> Post meeting with matt
+Have implemented a sound effect system using sound effects taken from youtube. 
+If a take node was neutral, it plays the reinforce sound effect.
+If a battle occurs that you are not a part of, the stalemate battle effect plays
+
+Have also added a looping backing track system. Three songs that change over time.
+Matt has conviced me that music is not important or even needed. Also that the sfx are to grand.
+
+Have re-done all the sfx to be more muted and board-game like.
+Have also added a new sfx for take neutral nodes, the most common sound in the game.
+
+Switched out the old soundtrack for a more relaxing one, based on nature and the japanese flute.
+I should give a more relaxed, and wisen feel to the game.
+
+[2018-06-17]
+Reworked the retreat system to uses a recursive distribution algorythum.
+Now the back nodes can recievde some of the retreating troops.
+Matt found an error in the node connections. Fixed it.
+Reworked the old flank mechanic into a multiplication based on, to as to remain relevant in mid to late game.
+Also reworked the combat losses system to take into account the added power of the new flank system.
+
+ #New Flank System: Attack power is increased by 10% (non-compound) for every extra attack direction.
+ #New Combat Losses System: Strength is now Attack Power decreased by 10% (non-compound) for every 2 extra attack directions.
+
+[2018-06-16]
+Starting a logbook of all actions take in the development of "Fortify".
+This shoud hopefully help me keep trak of changes goiong forward.
+
+List of mechanic changes:
+- Players can reinforce a node they control with strength from adjacent nodes they also control, as there move for the turn.
+- If a node is lost, a percentage of that nodes strength is distributed across the losers other nodes.
+- If an attack fails, the attacked node loses strength equal to half the strength that was attacked with.
+
+Project Rundown: A 'chess-like' stratagy game, with a hexagon tile grid. Tiles refered to as nodes.
+Nodes have an owner and a strength. Players start with one node on oposite ends of the board.
+Players can attack nodes adjacent to there nodes. 
+If the sum of the strength of the surrounding nodes controlled by the attacker is greater that the strength of the defending node, the attacker takes control of the node.
+First to take the opponents starting node wins.
